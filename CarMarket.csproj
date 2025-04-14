@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Buy.png" />
+    <None Remove="Car.png" />
+    <None Remove="Driver.png" />
+    <None Remove="Garage.png" />
+    <None Remove="Purchase Order.png" />
+    <None Remove="User.png" />
+    <None Remove="лого2.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MaterialDesignColors" Version="5.2.1" />
+    <PackageReference Include="MaterialDesignThemes" Version="5.2.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Buy.png" />
+    <Resource Include="Car.png" />
+    <Resource Include="Driver.png" />
+    <Resource Include="Garage.png" />
+    <Resource Include="Purchase Order.png" />
+    <Resource Include="User.png" />
+    <Resource Include="лого2.png" />
+  </ItemGroup>
+
+</Project>
