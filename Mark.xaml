@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="CarMarket.Mark"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CarMarket"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" >
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Border Background="#eef1f5" Grid.ColumnSpan="2"></Border>
+        <Button x:Name="Back" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,15,15,0" Click="Back_Click" Grid.Column="1">Назад</Button>
+
+        <StackPanel Grid.Column="0">
+            <TextBlock Text="Добавить марку автомобиля" HorizontalAlignment="Center" Margin="0,15,0,0" 
+                       FontFamily="Century Gothic" FontWeight="Bold" FontSize="28" Width="355" 
+                       TextWrapping="WrapWithOverflow" TextTrimming="WordEllipsis" 
+                       TextAlignment="Center"/>
+            <TextBox materialDesign:HintAssist.Hint="Название" Margin="15,15,15,0" FontFamily="Century Gothic" FontSize="18"></TextBox>
+            <TextBox materialDesign:HintAssist.Hint="Страна"  Margin="15,10,15,0" FontFamily="Century Gothic" FontSize="18"></TextBox>
+            <TextBox materialDesign:HintAssist.Hint="Год основания"  Margin="15,10,15,0" FontFamily="Century Gothic" FontSize="18"></TextBox>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,30,0,0" MinHeight="50">
+                <Button MinHeight="50" materialDesign:ButtonAssist.CornerRadius="15" Margin="0,0,10,0" FontSize="18" Style="{StaticResource MaterialDesignFlatDarkBgButton}" FontFamily="Century Gothic" FontWeight="Bold">Сохранить</Button>
+                <Button MinHeight="50" MaxWidth="50" materialDesign:ButtonAssist.CornerRadius="15" Margin="0,0,10,0" FontSize="18" Style="{StaticResource MaterialDesignFlatDarkBgButton}">✐</Button>
+                <Button MinHeight="50"  materialDesign:ButtonAssist.CornerRadius="15" FontSize="18" Style="{StaticResource MaterialDesignFlatDarkBgButton}">🗑</Button>
+            </StackPanel>
+        </StackPanel>
+        
+        <DataGrid Grid.Column="1" Margin="0,65,0,0">
+            
+        </DataGrid>
+    </Grid>
+</UserControl>

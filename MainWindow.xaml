@@ -6,118 +6,132 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:CarMarket"
         mc:Ignorable="d"
-        Title="MainWindow" Height="850" Width="850" MinHeight="450" MinWidth="850" Background="#eef1f5">
+        Title="MainWindow" Height="600" Width="950" MinHeight="600" MinWidth="950" Background="#eef1f5">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="40"></RowDefinition>
-            <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="100"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
 
         <Border Background="#0f4d8f"/>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="1" Margin="0,0,0,0">
             <Button Content="Регистрация" Style="{StaticResource MaterialDesignFlatSecondaryButton}" Margin="0,0,10,0" HorizontalAlignment="Right" Foreground="White" FontFamily="Century Gothic"></Button>
             <Button Content="Вход" Style="{StaticResource MaterialDesignFlatDarkBgButton}" Margin="0,0,10,0" HorizontalAlignment="Right" HorizontalContentAlignment="Center" FontFamily="Century Gothic"></Button>
         </StackPanel>
 
-        <Border Grid.Row="1" Background="White"/>
-        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+        <Border Grid.Row="1" Background="White" Grid.ColumnSpan="2"/>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" Grid.Column="1">
             <TextBlock Grid.Row="1" VerticalAlignment="Center" Margin="0,0,10,0"  FontSize="28" FontWeight="Bold" TextWrapping="WrapWithOverflow" Foreground="#FFFF3050" FontFamily="Century Gothic">Буханка.ру</TextBlock>
             <Border MinWidth="100"  Margin="5">
                 <Border.Background>
-                    <ImageBrush ImageSource="/лого2.png" Stretch="Uniform"/>
+                    <ImageBrush Stretch="Uniform" ImageSource="res/лого2.png"/>
                 </Border.Background>
             </Border>
             <TextBlock Grid.Row="1" VerticalAlignment="Center" Margin="10,0,0,0" HorizontalAlignment="Right" FontSize="28" FontWeight="Bold" TextWrapping="WrapWithOverflow" Width="317" Foreground="#FF0160AC" FontFamily="Century Gothic">Магазин по продаже автомобилей</TextBlock>
         </StackPanel>
 
-        <ScrollViewer Grid.Row="2">
+        <ScrollViewer Grid.Row="2" Grid.ColumnSpan="2">
 
             <WrapPanel HorizontalAlignment="Center" Margin="0,0,0,20">
 
-                <Border MinWidth="350" MinHeight="100" Margin="40,20,0,0" Background="White" CornerRadius="15">
-                    <Border.Effect>
+                <Button x:Name="MarksButton" Style="{StaticResource MaterialDesignFlatButton}" materialDesign:ButtonAssist.CornerRadius="15" MinWidth="350" MinHeight="100" Margin="40,20,0,0" Background="White" Padding="0" Cursor="Hand" BorderBrush="White" Click="MarksButton_Click">
+                    <Button.Effect>
                         <DropShadowEffect Color="LightGray" BlurRadius="20" ShadowDepth="0" Direction="0"/>
-                    </Border.Effect>
-                    <StackPanel Orientation="Horizontal">
-                        <Border MinWidth="50" Margin="10">
-                            <Border.Background>
-                                <ImageBrush ImageSource="/Car.png" Stretch="Uniform"/>
-                            </Border.Background>
-                        </Border>
-                        <TextBlock  Margin="0,0,30,0" FontSize="22" FontFamily="Century Gothic" FontWeight="Bold" HorizontalAlignment="Right" VerticalAlignment="Center">Марки автомобилей</TextBlock>
-                    </StackPanel>
-                </Border>
-
-                <Border MinWidth="350" MinHeight="100" Margin="40,20,0,0" Background="White" CornerRadius="15">
-                    <Border.Effect>
+                    </Button.Effect>
+                    <Border  MinWidth="350" MinHeight="100" CornerRadius="15">
+                        <StackPanel Orientation="Horizontal">
+                            <Border MinWidth="50" Margin="10">
+                                <Border.Background>
+                                    <ImageBrush Stretch="Uniform" ImageSource="res/Car.png"/>
+                                </Border.Background>
+                            </Border>
+                            <TextBlock Text="Марки автомобилей" Margin="0,0,30,0" FontSize="22" FontFamily="Century Gothic" FontWeight="Bold" VerticalAlignment="Center" TextWrapping="WrapWithOverflow" Width="251" Foreground="Black"/>
+                        </StackPanel>
+                    </Border>
+                </Button>
+                <Button x:Name="AutoButton" Style="{StaticResource MaterialDesignFlatButton}" materialDesign:ButtonAssist.CornerRadius="15" MinWidth="350" MinHeight="100" Margin="40,20,0,0" Background="White" Padding="0" Cursor="Hand" BorderBrush="White" Click="AutoButton_Click">
+                    <Button.Effect>
                         <DropShadowEffect Color="LightGray" BlurRadius="20" ShadowDepth="0" Direction="0"/>
-                    </Border.Effect>
-                    <StackPanel Orientation="Horizontal">
-                        <Border MinWidth="50" Margin="10">
-                            <Border.Background>
-                                <ImageBrush ImageSource="/Garage.png" Stretch="Uniform"/>
-                            </Border.Background>
-                        </Border>
-                        <TextBlock Text="Автомобили в наличии" Margin="0,0,30,0" FontSize="22" FontFamily="Century Gothic" FontWeight="Bold" VerticalAlignment="Center" TextWrapping="WrapWithOverflow" Width="251"/>
-                    </StackPanel>
-                </Border>
-
-                <Border MinWidth="350" MinHeight="100" Margin="40,20,0,0" Background="White" CornerRadius="15">
-                    <Border.Effect>
+                    </Button.Effect>
+                    <Border  MinWidth="350" MinHeight="100" CornerRadius="15">
+                        <StackPanel Orientation="Horizontal">
+                            <Border MinWidth="50" Margin="10">
+                                <Border.Background>
+                                    <ImageBrush ImageSource="res/Garage.png" Stretch="Uniform"/>
+                                </Border.Background>
+                            </Border>
+                            <TextBlock Text="Автомобили в наличии" Margin="0,0,30,0" FontSize="22" FontFamily="Century Gothic" FontWeight="Bold" VerticalAlignment="Center" TextWrapping="WrapWithOverflow" Width="251" Foreground="Black"/>
+                        </StackPanel>
+                    </Border>
+                </Button>
+                <Button Style="{StaticResource MaterialDesignFlatButton}" materialDesign:ButtonAssist.CornerRadius="15" MinWidth="350" MinHeight="100" Margin="40,20,0,0" Background="White" Padding="0" Cursor="Hand" BorderBrush="White">
+                    <Button.Effect>
                         <DropShadowEffect Color="LightGray" BlurRadius="20" ShadowDepth="0" Direction="0"/>
-                    </Border.Effect>
-                    <StackPanel Orientation="Horizontal">
-                        <Border MinWidth="50" Margin="10">
-                            <Border.Background>
-                                <ImageBrush ImageSource="/Buy.png" Stretch="Uniform"/>
-                            </Border.Background>
-                        </Border>
-                        <TextBlock Text="Сделать заказ" Margin="0,0,30,0" FontSize="22" FontFamily="Century Gothic" FontWeight="Bold" VerticalAlignment="Center" TextWrapping="WrapWithOverflow" Width="251"/>
-                    </StackPanel>
-                </Border>
-
-                <Border MinWidth="350" MinHeight="100" Margin="40,20,0,0" Background="White" CornerRadius="15">
-                    <Border.Effect>
+                    </Button.Effect>
+                    <Border  MinWidth="350" MinHeight="100" CornerRadius="15">
+                        <StackPanel Orientation="Horizontal">
+                            <Border MinWidth="50" Margin="10">
+                                <Border.Background>
+                                    <ImageBrush ImageSource="res/Buy.png" Stretch="Uniform"/>
+                                </Border.Background>
+                            </Border>
+                            <TextBlock Text="Сделать заказ" Margin="0,0,30,0" FontSize="22" FontFamily="Century Gothic" FontWeight="Bold" VerticalAlignment="Center" TextWrapping="WrapWithOverflow" Width="251" Foreground="Black"/>
+                        </StackPanel>
+                    </Border>
+                </Button>
+                <Button Style="{StaticResource MaterialDesignFlatButton}" materialDesign:ButtonAssist.CornerRadius="15" MinWidth="350" MinHeight="100" Margin="40,20,0,0" Background="White" Padding="0" Cursor="Hand" BorderBrush="White">
+                    <Button.Effect>
                         <DropShadowEffect Color="LightGray" BlurRadius="20" ShadowDepth="0" Direction="0"/>
-                    </Border.Effect>
-                    <StackPanel Orientation="Horizontal">
-                        <Border MinWidth="50" Margin="10">
-                            <Border.Background>
-                                <ImageBrush ImageSource="/Driver.png" Stretch="Uniform"/>
-                            </Border.Background>
-                        </Border>
-                        <TextBlock Text="Просмотр водителей" Margin="0,0,30,0" FontSize="22" FontFamily="Century Gothic" FontWeight="Bold" VerticalAlignment="Center" TextWrapping="WrapWithOverflow" Width="251"/>
-                    </StackPanel>
-                </Border>
-                <Border MinWidth="350" MinHeight="100" Margin="40,20,0,0" Background="White" CornerRadius="15">
-                    <Border.Effect>
+                    </Button.Effect>
+                    <Border  MinWidth="350" MinHeight="100" CornerRadius="15">
+                        <StackPanel Orientation="Horizontal">
+                            <Border MinWidth="50" Margin="10">
+                                <Border.Background>
+                                    <ImageBrush ImageSource="res/Driver.png" Stretch="Uniform"/>
+                                </Border.Background>
+                            </Border>
+                            <TextBlock Text="Просмотр водителей" Margin="0,0,30,0" FontSize="22" FontFamily="Century Gothic" FontWeight="Bold" VerticalAlignment="Center" TextWrapping="WrapWithOverflow" Width="251" Foreground="Black"/>
+                        </StackPanel>
+                    </Border>
+                </Button>
+                <Button Style="{StaticResource MaterialDesignFlatButton}" materialDesign:ButtonAssist.CornerRadius="15" MinWidth="350" MinHeight="100" Margin="40,20,0,0" Background="White" Padding="0" Cursor="Hand" BorderBrush="White">
+                    <Button.Effect>
                         <DropShadowEffect Color="LightGray" BlurRadius="20" ShadowDepth="0" Direction="0"/>
-                    </Border.Effect>
-                    <StackPanel Orientation="Horizontal">
-                        <Border MinWidth="50" Margin="10">
-                            <Border.Background>
-                                <ImageBrush ImageSource="/User.png" Stretch="Uniform"/>
-                            </Border.Background>
-                        </Border>
-                        <TextBlock Text="Просмотр пользователей" Margin="0,0,30,0" FontSize="22" FontFamily="Century Gothic" FontWeight="Bold" VerticalAlignment="Center" TextWrapping="WrapWithOverflow" Width="251"/>
-                    </StackPanel>
-                </Border>
-                <Border MinWidth="350" MinHeight="100" Margin="40,20,0,0" Background="White" CornerRadius="15">
-                    <Border.Effect>
+                    </Button.Effect>
+                    <Border  MinWidth="350" MinHeight="100" CornerRadius="15">
+                        <StackPanel Orientation="Horizontal">
+                            <Border MinWidth="50" Margin="10">
+                                <Border.Background>
+                                    <ImageBrush ImageSource="res/User.png" Stretch="Uniform"/>
+                                </Border.Background>
+                            </Border>
+                            <TextBlock Text="Просмотр пользователей" Margin="0,0,30,0" FontSize="22" FontFamily="Century Gothic" FontWeight="Bold" VerticalAlignment="Center" TextWrapping="WrapWithOverflow" Width="251" Foreground="Black"/>
+                        </StackPanel>
+                    </Border>
+                </Button>
+                <Button Style="{StaticResource MaterialDesignFlatButton}" materialDesign:ButtonAssist.CornerRadius="15" MinWidth="350" MinHeight="100" 
+                        Margin="40,20,0,0" Background="White" Padding="0" Cursor="Hand" BorderBrush="White"
+                    Command="{Binding SelectTabCommand}"
+                    CommandParameter="2">
+                    <Button.Effect>
                         <DropShadowEffect Color="LightGray" BlurRadius="20" ShadowDepth="0" Direction="0"/>
-                    </Border.Effect>
-                    <StackPanel Orientation="Horizontal">
-                        <Border MinWidth="50" Margin="10">
-                            <Border.Background>
-                                <ImageBrush ImageSource="/Purchase Order.png" Stretch="Uniform"/>
-                            </Border.Background>
-                        </Border>
-                        <TextBlock Text="Сделки" Margin="0,0,30,0" FontSize="22" FontFamily="Century Gothic" FontWeight="Bold" VerticalAlignment="Center" TextWrapping="WrapWithOverflow" Width="251"/>
-                    </StackPanel>
-                </Border>
-
+                    </Button.Effect>
+                    <Border  MinWidth="350" MinHeight="100" CornerRadius="15">
+                        <StackPanel Orientation="Horizontal">
+                            <Border MinWidth="50" Margin="10">
+                                <Border.Background>
+                                    <ImageBrush ImageSource="res/Purchase Order.png" Stretch="Uniform"/>
+                                </Border.Background>
+                            </Border>
+                            <TextBlock Text="Сделки" Margin="0,0,30,0" FontSize="22" FontFamily="Century Gothic" FontWeight="Bold" VerticalAlignment="Center" TextWrapping="WrapWithOverflow" Width="251" Foreground="Black"/>
+                        </StackPanel>
+                    </Border>
+                </Button>
             </WrapPanel>
         </ScrollViewer>
+
+        <Frame x:Name="NavigationFrame" NavigationUIVisibility="Hidden" Visibility="Collapsed" Grid.Row="1" Grid.RowSpan="2"/>
+
     </Grid>
 </Window>

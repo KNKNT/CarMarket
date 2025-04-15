@@ -10,12 +10,10 @@
 
   <ItemGroup>
     <None Remove="Buy.png" />
-    <None Remove="Car.png" />
     <None Remove="Driver.png" />
     <None Remove="Garage.png" />
     <None Remove="Purchase Order.png" />
     <None Remove="User.png" />
-    <None Remove="лого2.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -24,13 +22,27 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Buy.png" />
-    <Resource Include="Car.png" />
-    <Resource Include="Driver.png" />
-    <Resource Include="Garage.png" />
-    <Resource Include="Purchase Order.png" />
-    <Resource Include="User.png" />
-    <Resource Include="лого2.png" />
+    <Resource Include="res\Buy.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="res\Car.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="res\Driver.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="res\Garage.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="res\Purchase Order.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="res\User.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="res\лого2.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>

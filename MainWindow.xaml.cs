@@ -20,5 +20,17 @@ namespace CarMarket
         {
             InitializeComponent();
         }
+
+        private void MarksButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationFrame.Visibility = Visibility.Visible;
+            NavigationFrame.Content = new Mark();
+        }
+
+        private void AutoButton_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
     }
 }
