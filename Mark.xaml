@@ -21,17 +21,17 @@
                        FontFamily="Century Gothic" FontWeight="Bold" FontSize="28" Width="355" 
                        TextWrapping="WrapWithOverflow" TextTrimming="WordEllipsis" 
                        TextAlignment="Center"/>
-            <TextBox materialDesign:HintAssist.Hint="Название" Margin="15,15,15,0" FontFamily="Century Gothic" FontSize="18"></TextBox>
-            <TextBox materialDesign:HintAssist.Hint="Страна"  Margin="15,10,15,0" FontFamily="Century Gothic" FontSize="18"></TextBox>
-            <TextBox materialDesign:HintAssist.Hint="Год основания"  Margin="15,10,15,0" FontFamily="Century Gothic" FontSize="18"></TextBox>
+            <TextBox x:Name="Name" materialDesign:HintAssist.Hint="Название" Margin="15,15,15,0" FontFamily="Century Gothic" FontSize="18"></TextBox>
+            <TextBox x:Name="Country" materialDesign:HintAssist.Hint="Страна"  Margin="15,10,15,0" FontFamily="Century Gothic" FontSize="18"></TextBox>
+            <TextBox x:Name="Year" materialDesign:HintAssist.Hint="Год основания"  Margin="15,10,15,0" FontFamily="Century Gothic" FontSize="18"></TextBox>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,30,0,0" MinHeight="50">
-                <Button MinHeight="50" materialDesign:ButtonAssist.CornerRadius="15" Margin="0,0,10,0" FontSize="18" Style="{StaticResource MaterialDesignFlatDarkBgButton}" FontFamily="Century Gothic" FontWeight="Bold">Сохранить</Button>
-                <Button MinHeight="50" MaxWidth="50" materialDesign:ButtonAssist.CornerRadius="15" Margin="0,0,10,0" FontSize="18" Style="{StaticResource MaterialDesignFlatDarkBgButton}">✐</Button>
-                <Button MinHeight="50"  materialDesign:ButtonAssist.CornerRadius="15" FontSize="18" Style="{StaticResource MaterialDesignFlatDarkBgButton}">🗑</Button>
+                <Button x:Name="InsertButton" MinHeight="50" materialDesign:ButtonAssist.CornerRadius="15" Margin="0,0,10,0" FontSize="18" Style="{StaticResource MaterialDesignFlatDarkBgButton}" FontFamily="Century Gothic" FontWeight="Bold" Click="InsertButton_Click">Сохранить</Button>
+                <Button x:Name="UpdateButton" MinHeight="50" MaxWidth="50" materialDesign:ButtonAssist.CornerRadius="15" Margin="0,0,10,0" FontSize="18" Style="{StaticResource MaterialDesignFlatDarkBgButton}" Click="UpdateButton_Click">✐</Button>
+                <Button x:Name="DeleteButton" MinHeight="50"  materialDesign:ButtonAssist.CornerRadius="15" FontSize="18" Style="{StaticResource MaterialDesignFlatDarkBgButton}" Click="DeleteButton_Click">🗑</Button>
             </StackPanel>
         </StackPanel>
 
-        <DataGrid x:Name="dataGrid" AutoGenerateColumns="False" Grid.Column="1" Margin="0,65,0,0" Background="#FFEEF1F5">
+        <DataGrid x:Name="dataGrid" IsReadOnly="True" AutoGenerateColumns="False" Grid.Column="1" Margin="0,65,0,0" Background="#FFEEF1F5" SelectionChanged="dataGrid_SelectionChanged">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding Mark_id}"/>
                 <DataGridTextColumn Header="Марка" Binding="{Binding name}"/>

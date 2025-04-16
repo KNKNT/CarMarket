@@ -36,7 +36,6 @@
                         <DataTemplate>
                             <Button x:Name="Buy" Content="Купить" 
                             Style="{StaticResource MaterialDesignFlatDarkBgButton}"
-                            Command="{Binding YourCommand}"
                             CommandParameter="{Binding}" Click="Buy_Click"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
