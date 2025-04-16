@@ -36,7 +36,7 @@ namespace CarMarket
         private void LoadData()
         {
             DataBase db = new DataBase();
-            dataView = db.ExecuteQuery("SELECT * FROM car.showcars;");
+            dataView = db.ExecuteQuery("SELECT * FROM car.showcarsnew;");
             dataGrid.ItemsSource = dataView;
         }
 

@@ -45,5 +45,10 @@ namespace CarMarket
         {
             NavigationFrame.Content = new Deal();
         }
+
+        private void MakeOrder_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationFrame.Content = new MakeOrder();
+        }
     }
 }

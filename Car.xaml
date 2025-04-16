@@ -22,7 +22,7 @@
 
         <DataGrid x:Name="dataGrid" Margin="0,65,0,75" ColumnWidth="*" AutoGenerateColumns="False" IsReadOnly="True" Background="#FFEEF1F5">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Binding="{Binding car_id}"/>
+                <DataGridTextColumn Header="ID" Binding="{Binding car_id}" Width="50"/>
                 <DataGridTextColumn Header="Марка" Binding="{Binding name}"/>
                 <DataGridTextColumn Header="Модель" Binding="{Binding model}"/>
                 <DataGridTextColumn Header="Год" Binding="{Binding year}"/>

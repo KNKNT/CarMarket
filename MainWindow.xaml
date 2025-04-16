@@ -65,7 +65,7 @@
                         </StackPanel>
                     </Border>
                 </Button>
-                <Button Style="{StaticResource MaterialDesignFlatButton}" materialDesign:ButtonAssist.CornerRadius="15" MinWidth="350" MinHeight="100" Margin="40,20,0,0" Background="White" Padding="0" Cursor="Hand" BorderBrush="White">
+                <Button x:Name="MakeOrder" Style="{StaticResource MaterialDesignFlatButton}" materialDesign:ButtonAssist.CornerRadius="15" MinWidth="350" MinHeight="100" Margin="40,20,0,0" Background="White" Padding="0" Cursor="Hand" BorderBrush="White" Click="MakeOrder_Click">
                     <Button.Effect>
                         <DropShadowEffect Color="LightGray" BlurRadius="20" ShadowDepth="0" Direction="0"/>
                     </Button.Effect>
