@@ -23,14 +23,27 @@ namespace CarMarket
 
         private void MarksButton_Click(object sender, RoutedEventArgs e)
         {
-            NavigationFrame.Visibility = Visibility.Visible;
             NavigationFrame.Content = new Mark();
         }
 
         private void AutoButton_Click(object sender, RoutedEventArgs e)
         {
-            
+            NavigationFrame.Content = new Car();
         }
 
+        private void ShowDrivers_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationFrame.Content = new Driver();
+        }
+
+        private void ShowUsers_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationFrame.Content = new Users();
+        }
+
+        private void ShowDeals_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationFrame.Content = new Deal();
+        }
     }
 }

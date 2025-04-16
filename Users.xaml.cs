@@ -1,20 +1,27 @@
-﻿using System.Data;
-using System.Reflection;
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Controls.Primitives;
 using System.Windows.Data;
-using Google.Protobuf.WellKnownTypes;
-
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
 
 namespace CarMarket
 {
     /// <summary>
-    /// Логика взаимодействия для Mark.xaml
+    /// Логика взаимодействия для Users.xaml
     /// </summary>
-    public partial class Mark : UserControl
+    public partial class Users : UserControl
     {
-        public Mark()
+        public Users()
         {
             InitializeComponent();
             LoadData();
@@ -25,15 +32,14 @@ namespace CarMarket
         {
             Content = null;
         }
-
-        DataView dataView;
-        
-        public void LoadData()
+        private void LoadData()
         {
             DataBase db = new DataBase();
-            dataView = db.ExecuteQuery("SELECT * FROM mark");
+            dataView = db.ExecuteQuery("Select * from users");
             dataGrid.ItemsSource = dataView;
         }
+
+        DataView dataView;
 
         private void Filter_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -83,6 +89,5 @@ namespace CarMarket
 
             dataView.RowFilter = $"CONVERT([{columnName}], 'System.String') LIKE '%{searchText.Replace("'", "''")}%'";
         }
-
     }
 }

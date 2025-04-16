@@ -1,20 +1,27 @@
-﻿using System.Data;
-using System.Reflection;
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Controls.Primitives;
 using System.Windows.Data;
-using Google.Protobuf.WellKnownTypes;
-
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
 
 namespace CarMarket
 {
     /// <summary>
-    /// Логика взаимодействия для Mark.xaml
+    /// Логика взаимодействия для Car.xaml
     /// </summary>
-    public partial class Mark : UserControl
+    public partial class Car : UserControl
     {
-        public Mark()
+        public Car()
         {
             InitializeComponent();
             LoadData();
@@ -26,14 +33,14 @@ namespace CarMarket
             Content = null;
         }
 
-        DataView dataView;
-        
-        public void LoadData()
+        private void LoadData()
         {
             DataBase db = new DataBase();
-            dataView = db.ExecuteQuery("SELECT * FROM mark");
+            dataView = db.ExecuteQuery("SELECT * FROM car.showcars;");
             dataGrid.ItemsSource = dataView;
         }
+
+        DataView dataView;
 
         private void Filter_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -84,5 +91,26 @@ namespace CarMarket
             dataView.RowFilter = $"CONVERT([{columnName}], 'System.String') LIKE '%{searchText.Replace("'", "''")}%'";
         }
 
+        private void Buy_Click(object sender, RoutedEventArgs e)
+        {
+            var button = sender as Button;
+
+            if (button?.DataContext is DataRowView rowView)
+            { 
+                int id = Convert.ToInt32(rowView[0]);
+                string? mark = rowView[1].ToString();
+                string? model = rowView[2].ToString();
+                int year = Convert.ToInt32(rowView[3]);
+                string? fuel = rowView[4].ToString();
+                string? transmission = rowView[5].ToString();
+                string? engine = rowView[6].ToString();
+                string? power = rowView[7].ToString();
+                int price = Convert.ToInt32(rowView[8]);
+                string? image = rowView[9].ToString();
+
+
+                Content = new Order(id, mark, model, year, fuel, transmission, engine, power, price, image);
+            }
+        }
     }
 }

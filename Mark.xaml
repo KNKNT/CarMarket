@@ -14,7 +14,7 @@
         </Grid.ColumnDefinitions>
 
         <Border Background="#eef1f5" Grid.ColumnSpan="2"></Border>
-        <Button x:Name="Back" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,15,15,0" Click="Back_Click" Grid.Column="1">Назад</Button>
+        <Border Background="White" ></Border>
 
         <StackPanel Grid.Column="0">
             <TextBlock Text="Добавить марку автомобиля" HorizontalAlignment="Center" Margin="0,15,0,0" 
@@ -30,9 +30,19 @@
                 <Button MinHeight="50"  materialDesign:ButtonAssist.CornerRadius="15" FontSize="18" Style="{StaticResource MaterialDesignFlatDarkBgButton}">🗑</Button>
             </StackPanel>
         </StackPanel>
-        
-        <DataGrid Grid.Column="1" Margin="0,65,0,0">
-            
+
+        <DataGrid x:Name="dataGrid" AutoGenerateColumns="False" Grid.Column="1" Margin="0,65,0,0" Background="#FFEEF1F5">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Mark_id}"/>
+                <DataGridTextColumn Header="Марка" Binding="{Binding name}"/>
+                <DataGridTextColumn Header="Страна" Binding="{Binding country}"/>
+                <DataGridTextColumn Header="Год основания" Binding="{Binding year}"/>
+            </DataGrid.Columns>
         </DataGrid>
+        <StackPanel Orientation="Horizontal" Grid.Column="1" VerticalAlignment="Top" Margin="15">
+            <TextBox x:Name="Value" materialDesign:HintAssist.Hint="Поиск" VerticalAlignment="Top" MinWidth="150" FontFamily="Century Gothic" FontSize="18" TextChanged="Value_TextChanged"></TextBox>
+            <ComboBox x:Name="Filter" materialDesign:HintAssist.Hint="Фильтр" Margin="15,0,15,0" VerticalAlignment="Top" MinWidth="200" FontFamily="Century Gothic" FontSize="18" SelectionChanged="Filter_SelectionChanged"/>
+        </StackPanel>
+        <Button x:Name="Back" Style="{StaticResource MaterialDesignFlatButton}" Margin="15" HorizontalAlignment="Right" VerticalAlignment="Top" Click="Back_Click" Grid.Column="1" Foreground="#FF0069C0">Назад</Button>
     </Grid>
 </UserControl>

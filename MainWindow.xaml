@@ -6,7 +6,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:CarMarket"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="950" MinHeight="600" MinWidth="950" Background="#eef1f5">
+        Title="MainWindow" Height="600" Width="950" MinHeight="450" MinWidth="950" Background="#eef1f5">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="40"></RowDefinition>
@@ -80,7 +80,7 @@
                         </StackPanel>
                     </Border>
                 </Button>
-                <Button Style="{StaticResource MaterialDesignFlatButton}" materialDesign:ButtonAssist.CornerRadius="15" MinWidth="350" MinHeight="100" Margin="40,20,0,0" Background="White" Padding="0" Cursor="Hand" BorderBrush="White">
+                <Button x:Name="ShowDrivers" Style="{StaticResource MaterialDesignFlatButton}" materialDesign:ButtonAssist.CornerRadius="15" MinWidth="350" MinHeight="100" Margin="40,20,0,0" Background="White" Padding="0" Cursor="Hand" BorderBrush="White" Click="ShowDrivers_Click">
                     <Button.Effect>
                         <DropShadowEffect Color="LightGray" BlurRadius="20" ShadowDepth="0" Direction="0"/>
                     </Button.Effect>
@@ -95,7 +95,7 @@
                         </StackPanel>
                     </Border>
                 </Button>
-                <Button Style="{StaticResource MaterialDesignFlatButton}" materialDesign:ButtonAssist.CornerRadius="15" MinWidth="350" MinHeight="100" Margin="40,20,0,0" Background="White" Padding="0" Cursor="Hand" BorderBrush="White">
+                <Button x:Name="ShowUsers" Style="{StaticResource MaterialDesignFlatButton}" materialDesign:ButtonAssist.CornerRadius="15" MinWidth="350" MinHeight="100" Margin="40,20,0,0" Background="White" Padding="0" Cursor="Hand" BorderBrush="White" Click="ShowUsers_Click">
                     <Button.Effect>
                         <DropShadowEffect Color="LightGray" BlurRadius="20" ShadowDepth="0" Direction="0"/>
                     </Button.Effect>
@@ -110,10 +110,10 @@
                         </StackPanel>
                     </Border>
                 </Button>
-                <Button Style="{StaticResource MaterialDesignFlatButton}" materialDesign:ButtonAssist.CornerRadius="15" MinWidth="350" MinHeight="100" 
+                <Button x:Name="ShowDeals" Style="{StaticResource MaterialDesignFlatButton}" materialDesign:ButtonAssist.CornerRadius="15" MinWidth="350" MinHeight="100" 
                         Margin="40,20,0,0" Background="White" Padding="0" Cursor="Hand" BorderBrush="White"
                     Command="{Binding SelectTabCommand}"
-                    CommandParameter="2">
+                    CommandParameter="2" Click="ShowDeals_Click">
                     <Button.Effect>
                         <DropShadowEffect Color="LightGray" BlurRadius="20" ShadowDepth="0" Direction="0"/>
                     </Button.Effect>
@@ -131,7 +131,7 @@
             </WrapPanel>
         </ScrollViewer>
 
-        <Frame x:Name="NavigationFrame" NavigationUIVisibility="Hidden" Visibility="Collapsed" Grid.Row="1" Grid.RowSpan="2"/>
+        <Frame x:Name="NavigationFrame" NavigationUIVisibility="Hidden" Grid.Row="1" Grid.RowSpan="2"/>
 
     </Grid>
 </Window>
