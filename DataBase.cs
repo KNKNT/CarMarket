@@ -8,8 +8,10 @@ namespace CarMarket
         DataTable dataTable = new DataTable();
         string connectionString = "Server=localhost;Database=car;User Id=root;Password=admin;";
 
-        public DataView ExecuteQuery(string sql)
+        public DataView ExecuteQuery(string sql, MySqlParameter[] parameters = null)
         {
+
+            dataTable.Clear();
 
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
@@ -17,6 +19,11 @@ namespace CarMarket
 
                 using (MySqlCommand command = new MySqlCommand(sql, connection))
                 {
+                    if (parameters != null)
+                    {
+                        command.Parameters.AddRange(parameters);
+                    }
+
                     using (MySqlDataReader reader = command.ExecuteReader())
                     {
                         dataTable.Load(reader);

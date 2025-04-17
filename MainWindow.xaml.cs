@@ -16,9 +16,11 @@ namespace CarMarket
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        public MainWindow () : this (0) {}
+        public MainWindow(int id)
         {
             InitializeComponent();
+            if (id != 0) {login.Content = id.ToString(); }
         }
 
         private void MarksButton_Click(object sender, RoutedEventArgs e)
@@ -49,6 +51,13 @@ namespace CarMarket
         private void MakeOrder_Click(object sender, RoutedEventArgs e)
         {
             NavigationFrame.Content = new MakeOrder();
+        }
+
+        private void login_Click(object sender, RoutedEventArgs e)
+        {
+            LoginPage.Login login = new LoginPage.Login();
+            login.Show();
+            this.Close();
         }
     }
 }

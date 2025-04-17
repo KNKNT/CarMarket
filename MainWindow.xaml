@@ -16,8 +16,7 @@
 
         <Border Background="#0f4d8f"/>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="1" Margin="0,0,0,0">
-            <Button Content="Регистрация" Style="{StaticResource MaterialDesignFlatSecondaryButton}" Margin="0,0,10,0" HorizontalAlignment="Right" Foreground="White" FontFamily="Century Gothic"></Button>
-            <Button Content="Вход" Style="{StaticResource MaterialDesignFlatDarkBgButton}" Margin="0,0,10,0" HorizontalAlignment="Right" HorizontalContentAlignment="Center" FontFamily="Century Gothic"></Button>
+            <Button x:Name="login" Content="Войти" Style="{StaticResource MaterialDesignFlatSecondaryButton}" Margin="0,0,10,0" HorizontalAlignment="Right" Foreground="White" FontFamily="Century Gothic" Click="login_Click"></Button>
         </StackPanel>
 
         <Border Grid.Row="1" Background="White" Grid.ColumnSpan="2"/>

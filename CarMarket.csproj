@@ -47,8 +47,4 @@
     </Resource>
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Новая папка\" />
-  </ItemGroup>
-
 </Project>
