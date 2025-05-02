@@ -1,0 +1,98 @@
+﻿<UserControl x:Class="CarMarket.ProfilePage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:CarMarket.LoginPage"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Border Grid.ColumnSpan="2" Background="#eef1f5"/>
+
+            <Button x:Name="Back" Style="{StaticResource MaterialDesignFlatButton}" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="15" Click="Back_Click" Grid.Column="1">Назад</Button>
+            <TextBlock Text="Буханка.ру" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="15,15,15,0" MaxWidth="250" FontFamily="Century Gothic" FontWeight="Bold" FontSize="36"/>
+        <StackPanel Margin="0,70,0,0">
+
+            <TabControl Grid.ColumnSpan="2" MinHeight="340" TabStripPlacement="Left">
+                <TabItem Header="Профиль" FontFamily="Century Gothic" MinWidth="200">
+                    <Border Grid.Column="1" Background="White" Margin="25,0,25,0" Padding="10" CornerRadius="15">
+                        <Border.Effect>
+                            <DropShadowEffect Color="LightGray" BlurRadius="20" ShadowDepth="0" Direction="0"/>
+                        </Border.Effect>
+                        <Grid>
+                            <StackPanel>
+                                <TextBlock HorizontalAlignment="Center" Margin="15" FontSize="36" FontWeight="Bold">Добро пожаловать!</TextBlock>
+                                <TextBlock x:Name="Fio" FontSize="27" FontWeight="Bold" Margin="25,25,25,0">ФИО</TextBlock>
+                                <TextBlock x:Name="Rules" FontSize="22" Margin="25,5,25,0">Права</TextBlock>
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                </TabItem>
+
+                <TabItem Header="Личные данные" FontFamily="Century Gothic" MinWidth="200">
+                    <Border Grid.Column="1" Background="White" Margin="25,0,25,0" Padding="10" CornerRadius="15">
+                        <Border.Effect>
+                            <DropShadowEffect Color="LightGray" BlurRadius="20" ShadowDepth="0" Direction="0"/>
+                        </Border.Effect>
+                        <Grid>
+                            <StackPanel>
+                                <TextBox x:Name="LastName" Margin="25,15,25,0" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Фамилия" FontSize="20"/>
+                                <TextBox x:Name="FirstName" Margin="25,15,25,0" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Имя" FontSize="20"/>
+                                <TextBox x:Name="MidName" Margin="25,15,25,0" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Отчество" FontSize="20"/>
+                                <TextBox x:Name="Phone" Margin="25,15,25,0" Style="{StaticResource MaterialDesignFloatingHintTextBox}" MaxLength="12" materialDesign:HintAssist.Hint="Номер телефона" FontSize="20"/>
+                            </StackPanel>
+
+                            <Button x:Name="Save" MaxWidth="200" VerticalAlignment="Bottom" MinHeight="50" materialDesign:ButtonAssist.CornerRadius="15" Margin="0,0,0,20" FontSize="18" Style="{StaticResource MaterialDesignFlatDarkBgButton}" FontFamily="Century Gothic" FontWeight="Bold" Click="Save_Click">Сохранить</Button>
+                        </Grid>
+
+                    </Border>
+                </TabItem>
+
+                <TabItem Header="Прошедшие сделки" FontFamily="Century Gothic" MinWidth="200">
+                    <Border Grid.Column="1" Background="White" Margin="25,0,25,0" Padding="10" CornerRadius="15">
+                        <Border.Effect>
+                            <DropShadowEffect Color="LightGray" BlurRadius="20" ShadowDepth="0" Direction="0"/>
+                        </Border.Effect>
+                        <Frame x:Name="Deals"/>
+                    </Border>
+                </TabItem>
+
+                <TabItem Header="Безопасность" FontFamily="Century Gothic" MinWidth="200">
+                    <Border Grid.Column="1" Background="White" Margin="25,0,25,0" Padding="10" CornerRadius="15">
+                        <Border.Effect>
+                            <DropShadowEffect Color="LightGray" BlurRadius="20" ShadowDepth="0" Direction="0"/>
+                        </Border.Effect>
+                        <Grid>
+                            <StackPanel>
+                                <TextBox x:Name="Login" IsReadOnly="True" Margin="25,15,25,0" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Логин" FontSize="20"/>
+                                <TextBlock  FontSize="16" Margin="25,60,25,0" Foreground="Gray" TextWrapping="WrapWithOverflow">Для изменения пароля требуется специальный ключ, который выдаётся Администратором*</TextBlock>
+                                <TextBox Name="Key" Margin="25,15,25,0" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Ключ" FontSize="20"/>
+                                <StackPanel Orientation="Horizontal">
+                                    <PasswordBox Name="OldPassword" Margin="25,15,25,0" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" materialDesign:HintAssist.Hint="Новый пароль" FontSize="20"/>
+                                    <PasswordBox Name="NewPassword" Margin="25,15,25,0" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" materialDesign:HintAssist.Hint="Повторите пароль" FontSize="20"/>
+                                </StackPanel>
+                                <Button x:Name="SavePass" MaxWidth="200" VerticalAlignment="Bottom" MinHeight="50" materialDesign:ButtonAssist.CornerRadius="15" Margin="0,20,0,0" FontSize="18" Style="{StaticResource MaterialDesignFlatDarkBgButton}" FontFamily="Century Gothic" FontWeight="Bold" Click="SavePass_Click">Сохранить</Button>
+
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                </TabItem>
+                
+                <TabItem Header="Выход">
+                    <Border Grid.Column="1" Background="White" Margin="25,0,25,0" Padding="10" CornerRadius="15">
+                        <Border.Effect>
+                            <DropShadowEffect Color="LightGray" BlurRadius="20" ShadowDepth="0" Direction="0"/>
+                        </Border.Effect>
+                        <StackPanel VerticalAlignment="Center">
+                            <TextBlock FontSize="27" TextAlignment="Center" FontWeight="Bold" Margin="25,25,25,0">Выйти из текущего аккаунта?</TextBlock>
+                            <Button x:Name="Leave" MaxWidth="200" VerticalAlignment="Bottom" MinHeight="50" materialDesign:ButtonAssist.CornerRadius="15" Margin="0,20,0,0" FontSize="18" Style="{StaticResource MaterialDesignFlatDarkBgButton}" FontFamily="Century Gothic" FontWeight="Bold" Click="Leave_Click">Выйти</Button>
+                        </StackPanel>
+                    </Border>
+                </TabItem>
+
+            </TabControl>
+
+        </StackPanel>
+    </Grid>
+</UserControl>

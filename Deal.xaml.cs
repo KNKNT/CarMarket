@@ -1,18 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace CarMarket
 {
@@ -21,11 +10,14 @@ namespace CarMarket
     /// </summary>
     public partial class Deal : UserControl
     {
-        public Deal()
+        public Deal(bool AllowBackButton)
         {
             InitializeComponent();
             LoadData();
             SetupSearchColumns();
+
+            if(!AllowBackButton)
+                Back.Visibility = Visibility.Collapsed;
         }
         private void Back_Click(object sender, RoutedEventArgs e)
         {
@@ -34,7 +26,11 @@ namespace CarMarket
         private void LoadData()
         {
             DataBase db = new DataBase();
-            dataView = db.ExecuteQuery("SELECT * FROM car.showdeals");
+            
+            if (Session.Rules == "Администратор")
+                dataView = db.ExecuteQuery($"SELECT * FROM car.showdeals");
+            else
+                dataView = db.ExecuteQuery($"SELECT * FROM car.showdeals WHERE user_id = {Session.Id}");
             dataGrid.ItemsSource = dataView;
         }
 

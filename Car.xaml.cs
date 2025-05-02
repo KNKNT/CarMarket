@@ -97,19 +97,25 @@ namespace CarMarket
 
             if (button?.DataContext is DataRowView rowView)
             { 
-                int id = Convert.ToInt32(rowView[0]);
-                string? mark = rowView[1].ToString();
-                string? model = rowView[2].ToString();
-                int year = Convert.ToInt32(rowView[3]);
-                string? fuel = rowView[4].ToString();
-                string? transmission = rowView[5].ToString();
-                string? engine = rowView[6].ToString();
-                string? power = rowView[7].ToString();
-                int price = Convert.ToInt32(rowView[8]);
-                string? image = rowView[9].ToString();
+                if (Session.Id != 0)
+                {
+                    int id = Convert.ToInt32(rowView[0]);
+                    string? mark = rowView[1].ToString();
+                    string? model = rowView[2].ToString();
+                    int year = Convert.ToInt32(rowView[3]);
+                    string? fuel = rowView[4].ToString();
+                    string? transmission = rowView[5].ToString();
+                    string? engine = rowView[6].ToString();
+                    string? power = rowView[7].ToString();
+                    int price = Convert.ToInt32(rowView[8]);
+                    string? image = rowView[9].ToString();
 
-
-                Content = new Order(id, mark, model, year, fuel, transmission, engine, power, price, image);
+                    Content = new Order(id, mark, model, year, fuel, transmission, engine, power, price, image);
+                }
+                else
+                {
+                    MessageBox.Show("Для совершения покупки необходимо войти в свой аккаунт");
+                }
             }
         }
     }

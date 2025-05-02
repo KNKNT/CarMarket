@@ -18,8 +18,8 @@
                         <TextBox x:Name="Login" Margin="0,5,0,0" materialDesign:HintAssist.Hint="Логин" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Century Gothic" FontSize="20"></TextBox>
                     </Border>
 
-                    <Border Background="#f5f7fa"  CornerRadius="5" Margin="0,0,0,15">
-                        <TextBox x:Name="Password" Margin="0,5,0,0" materialDesign:HintAssist.Hint="Пароль" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Century Gothic" FontSize="20"/>
+                    <Border Background="#f5f7fa" CornerRadius="5" Margin="0,0,0,15">
+                        <PasswordBox Name="Password" Margin="0,5,0,0" materialDesign:HintAssist.Hint="Пароль" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" FontFamily="Century Gothic" FontSize="20"></PasswordBox>
                     </Border>
                     <Border Background="#f5f7fa"  CornerRadius="5" Margin="0,0,0,15">
                         <TextBox x:Name="LastName" Margin="0,5,0,0" materialDesign:HintAssist.Hint="Фамилия" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Century Gothic" FontSize="20"/>

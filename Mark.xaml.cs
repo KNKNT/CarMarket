@@ -1,12 +1,8 @@
 ﻿using System.Data;
-using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using MySql.Data.MySqlClient;
-using Google.Protobuf.WellKnownTypes;
-using static MaterialDesignThemes.Wpf.Theme;
 
 
 namespace CarMarket
@@ -16,11 +12,19 @@ namespace CarMarket
     /// </summary>
     public partial class Mark : UserControl
     {
-        public Mark()
+        public Mark(bool AllowAdd)
         {
             InitializeComponent();
             LoadData();
             SetupSearchColumns();
+
+            if (!AllowAdd)
+            {
+                AddMark.Visibility = Visibility.Collapsed;
+                tablePanek.SetValue(Grid.ColumnProperty, 0);
+                tablePanek.SetValue(Grid.ColumnSpanProperty, 2);
+            }
+
         }
 
         DataBase db = new DataBase();
@@ -32,8 +36,7 @@ namespace CarMarket
             Content = null;
         }
 
-        
-
+  
         private void Filter_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Search();

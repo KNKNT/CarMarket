@@ -16,11 +16,12 @@
                 <Border Background="#f5f7fa" CornerRadius="5" Margin="0,0,0,15">
                         <TextBox x:Name="LoginBox" Margin="0,5,0,0" materialDesign:HintAssist.Hint="Логин" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Century Gothic" FontSize="20"></TextBox>
                 </Border>
-                
-                <Border Background="#f5f7fa"  CornerRadius="5" Margin="0,0,0,15">
-                        <TextBox Name="PasswordBox" Margin="0,5,0,0" materialDesign:HintAssist.Hint="Пароль" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Century Gothic" FontSize="20"/>
+
+                <Border Background="#f5f7fa" CornerRadius="5" Margin="0,0,0,15">
+                    <PasswordBox Name="PasswordBox" Margin="0,5,0,0" materialDesign:HintAssist.Hint="Пароль" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" FontFamily="Century Gothic" FontSize="20"></PasswordBox>
                 </Border>
-                  
+
+            
                 <Button x:Name="LoginButton" Content="Войти" MinHeight="50" materialDesign:ButtonAssist.CornerRadius="5" Margin="0,30,0,0" FontSize="18" Style="{StaticResource MaterialDesignFlatDarkBgButton}" FontFamily="Century Gothic" FontWeight="Bold" BorderBrush="#FF1D5DEB" Background="#FF1D5DEB" Click="LoginButton_Click"/>
             </StackPanel>
         </Border>

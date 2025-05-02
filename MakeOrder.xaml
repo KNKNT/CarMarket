@@ -24,7 +24,7 @@
                 <TextBlock  Margin="0,0,0,25" FontFamily="Century Gothic" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center">Автомобиль</TextBlock>
                 <ComboBox x:Name="Mark" materialDesign:HintAssist.Hint="Марка" Margin="0,0,0,15" FontFamily="Century Gothic" FontSize="20"></ComboBox>
                 <TextBox x:Name="Model" materialDesign:HintAssist.Hint="Модель" Margin="0,0,0,15" FontFamily="Century Gothic" FontSize="20"></TextBox>
-                <TextBox x:Name="Year" materialDesign:HintAssist.Hint="Год" Margin="0,0,0,15" FontFamily="Century Gothic" FontSize="20"></TextBox>
+                <TextBox x:Name="Year" MaxLines="4" materialDesign:HintAssist.Hint="Год" Margin="0,0,0,15" FontFamily="Century Gothic" FontSize="20"></TextBox>
                 <ComboBox x:Name="Fuel" materialDesign:HintAssist.Hint="Тип топлива" Margin="0,0,0,15" FontFamily="Century Gothic" FontSize="20">
                     <ComboBoxItem>Бензин</ComboBoxItem>
                     <ComboBoxItem>Дизель</ComboBoxItem>
@@ -42,8 +42,8 @@
         <Image x:Name="ImageCar" Grid.Column="1">
 
         </Image>
-        <TextBox x:Name="Price" materialDesign:HintAssist.Hint="Цена" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,0,40" FontWeight="Bold" FontSize="32" FontFamily="Arial Black"></TextBox>
-        <TextBox x:Name="Image" materialDesign:HintAssist.Hint="Ссылка на изображение" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,40,0,0" FontSize="16" FontFamily="Centry Ghotic" TextChanged="Image_TextChanged"/>
+        <TextBox x:Name="Price" MaxLength="10" materialDesign:HintAssist.Hint="Цена" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,0,40" FontWeight="Bold" FontSize="32" FontFamily="Arial Black"></TextBox>
+        <TextBox x:Name="Image" MaxWidth="180" materialDesign:HintAssist.Hint="Ссылка на изображение" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,40,0,0" FontSize="16" FontFamily="Centry Ghotic" TextChanged="Image_TextChanged"/>
         <Button x:Name="Add" Style="{StaticResource MaterialDesignFlatDarkBgButton}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,15,15" Grid.Column="1" Click="Add_Click">Продолжить</Button>
 
     </Grid>

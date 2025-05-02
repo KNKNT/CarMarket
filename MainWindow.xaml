@@ -6,7 +6,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:CarMarket"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="950" MinHeight="450" MinWidth="950" Background="#eef1f5">
+        Title="Буханка.ру" Height="600" Width="950" MinHeight="450" MinWidth="950" Background="#eef1f5">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="40"></RowDefinition>
@@ -17,6 +17,7 @@
         <Border Background="#0f4d8f"/>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="1" Margin="0,0,0,0">
             <Button x:Name="login" Content="Войти" Style="{StaticResource MaterialDesignFlatSecondaryButton}" Margin="0,0,10,0" HorizontalAlignment="Right" Foreground="White" FontFamily="Century Gothic" Click="login_Click"></Button>
+            <Button x:Name="profile" Content="Профиль" Style="{StaticResource MaterialDesignFlatSecondaryButton}" Margin="0,0,10,0" HorizontalAlignment="Right" Foreground="White" FontFamily="Century Gothic" Click="profile_Click"></Button>
         </StackPanel>
 
         <Border Grid.Row="1" Background="White" Grid.ColumnSpan="2"/>

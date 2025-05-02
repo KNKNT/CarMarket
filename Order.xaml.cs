@@ -1,17 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
 using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace CarMarket
 {
@@ -26,6 +16,8 @@ namespace CarMarket
         {
             InitializeComponent();
 
+            _id = id;
+            _price = pirce;
             Mark.Inlines.Add(new Run(" " + mark) { FontWeight = FontWeights.Bold});
             Model.Inlines.Add(new Run(" " + model) { FontWeight = FontWeights.Bold});
             Year.Inlines.Add(new Run(" " + year) { FontWeight = FontWeights.Bold});
@@ -44,10 +36,28 @@ namespace CarMarket
 
             ImageCar.Source = bitmapImage;
         }
-
+        int _id;
+        int _price;
         private void Back_Click(object sender, RoutedEventArgs e)
         {
             Content = new Car();
+        }
+        DataBase db = new DataBase();
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            string insertSql = $"INSERT INTO car.deal (user_id, arrival_id, price, date_end) VALUES ({Session.Id}, {_id} , {_price}, curdate());";
+
+           
+
+            int rowsAffected = db.ExecuteNonQuery(insertSql);
+
+            if (rowsAffected > 0)
+            {
+                MessageBox.Show("Данные добавленны!");
+                Content = null;
+            }
+            else
+                MessageBox.Show("Не удалось добавить!");
         }
     }
 }

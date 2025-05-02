@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using MySqlX.XDevAPI;
 using System.Data;
 using System.Windows;
 using System.Windows.Input;
@@ -17,31 +18,29 @@ namespace CarMarket.LoginPage
         }
 
         Auth Auth = new Auth();
+        public int id;
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            MainWindow mainWindow = new MainWindow(id);
+            MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
         }
-
 
         private void Registration_MouseDown(object sender, MouseButtonEventArgs e)
         {
             NavigationFrame.Content = new Registration();
         }
-        int id = 0;
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
             string login = LoginBox.Text;
-            string password = PasswordBox.Text;
+            string password = PasswordBox.Password;
 
             if (login == "" | password == "") { MessageBox.Show("Поля не должны быть пустыми"); return; }
 
-            id = Auth.Login(login, password);
+            bool enter = Auth.Login(login, password);
 
-            if (id == -1) return;
-            
-            this.Close();
+            if (enter) 
+                this.Close();
         }
     }
 }

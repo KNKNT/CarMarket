@@ -19,12 +19,12 @@ namespace CarMarket.LoginPage
 
         private void RegistrationButton_Click(object sender, RoutedEventArgs e)
         {
-            if (Login.Text == "" | Password.Text == "" | FirstName.Text == "" | LastName.Text == "" | Phone.Text == "")
+            if (Login.Text == "" | Password.Password == "" | FirstName.Text == "" | LastName.Text == "" | Phone.Text == "")
             {
                 MessageBox.Show("Поля не должны быть пустыми");
                 return;
             }
-            bool registered = Auth.Register(Login.Text, Password.Text, FirstName.Text, LastName.Text, Phone.Text);
+            bool registered = Auth.Register(Login.Text, Password.Password, FirstName.Text, LastName.Text, Phone.Text);
 
             if (registered)
             {

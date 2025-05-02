@@ -1,13 +1,4 @@
-﻿using System.Text;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿using System.Windows;
 
 namespace CarMarket
 {
@@ -16,16 +7,36 @@ namespace CarMarket
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow () : this (0) {}
-        public MainWindow(int id)
+        public MainWindow()
         {
             InitializeComponent();
-            if (id != 0) {login.Content = id.ToString(); }
+
+            int id = Session.Id;
+            if (id == 0 )
+            {
+                profile.Visibility = Visibility.Collapsed;
+                MakeOrder.Visibility = Visibility.Collapsed;
+                ShowDrivers.Visibility = Visibility.Collapsed;
+                ShowUsers.Visibility = Visibility.Collapsed;
+                ShowDeals.Visibility = Visibility.Collapsed;
+            }
+            else if ((Session.Rules == "Пользователь") | (Session.Rules == "Водитель"))
+            {
+                login.Visibility = Visibility.Collapsed;
+                MakeOrder.Visibility = Visibility.Collapsed;
+                ShowDrivers.Visibility = Visibility.Collapsed;
+                ShowUsers.Visibility = Visibility.Collapsed;
+            } 
+            else if (Session.Rules == "Администратор")
+            {
+                login.Visibility = Visibility.Collapsed;
+            }
         }
 
         private void MarksButton_Click(object sender, RoutedEventArgs e)
         {
-            NavigationFrame.Content = new Mark();
+            
+            NavigationFrame.Content = new Mark(Session.Rules == "Администратор");
         }
 
         private void AutoButton_Click(object sender, RoutedEventArgs e)
@@ -45,7 +56,7 @@ namespace CarMarket
 
         private void ShowDeals_Click(object sender, RoutedEventArgs e)
         {
-            NavigationFrame.Content = new Deal();
+            NavigationFrame.Content = new Deal(true);
         }
 
         private void MakeOrder_Click(object sender, RoutedEventArgs e)
@@ -58,6 +69,12 @@ namespace CarMarket
             LoginPage.Login login = new LoginPage.Login();
             login.Show();
             this.Close();
+
+        }
+
+        private void profile_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationFrame.Content = new ProfilePage();
         }
     }
 }

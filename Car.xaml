@@ -18,9 +18,8 @@
             <ComboBox x:Name="Filter" materialDesign:HintAssist.Hint="Фильтр" Margin="15,0,15,0" VerticalAlignment="Top" MinWidth="200" FontFamily="Century Gothic" FontSize="18" SelectionChanged="Filter_SelectionChanged"/>
         </StackPanel>
 
-        <Button Content="Запрос на поставку" HorizontalAlignment="Right" VerticalAlignment="Bottom" MinHeight="50" materialDesign:ButtonAssist.CornerRadius="15" Margin="0,0,15,15" FontSize="18" Style="{StaticResource MaterialDesignFlatDarkBgButton}" FontFamily="Century Gothic" FontWeight="Bold"/>
 
-        <DataGrid x:Name="dataGrid" Margin="0,65,0,75" ColumnWidth="*" AutoGenerateColumns="False" IsReadOnly="True" Background="#FFEEF1F5">
+        <DataGrid x:Name="dataGrid" Margin="0,65,0,0" ColumnWidth="*" AutoGenerateColumns="False" IsReadOnly="True" Background="#FFEEF1F5">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding car_id}" Width="50"/>
                 <DataGridTextColumn Header="Марка" Binding="{Binding name}"/>

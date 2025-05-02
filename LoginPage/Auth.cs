@@ -7,7 +7,7 @@ namespace CarMarket.LoginPage
     {
         DataBase db = new DataBase();
 
-        public int Login(string login, string password)
+        public bool Login(string login, string password)
         {
             string sql = "SELECT * FROM users WHERE login = @login AND pass = @password";
             MySqlParameter[] parameters = {
@@ -20,12 +20,22 @@ namespace CarMarket.LoginPage
             if (result.Count > 0)
             {
                 MessageBox.Show("Вход выполнен успешно!");
-                return Convert.ToInt32(result[0]["user_id"].ToString());
+
+                Session.Id= Convert.ToInt32(result[0]["user_id"].ToString());
+                Session.FirstName= result[0]["first_name"].ToString();
+                Session.MidName= result[0]["mid_name"].ToString();
+                Session.LastName= result[0]["last_name"].ToString();
+                Session.Phone= result[0]["phone"].ToString();
+                Session.Login= result[0]["login"].ToString();
+                Session.Password= result[0]["pass"].ToString();
+                Session.Rules= result[0]["rules"].ToString();
+
+                return true;
             }
             else
             {
                 MessageBox.Show("Неверное имя пользователя или пароль");
-                return -1;
+                return false;
             }
         }
 

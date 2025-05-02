@@ -20,9 +20,9 @@
         <DataGrid x:Name="dataGrid" Margin="0,65,0,0" ColumnWidth="*" AutoGenerateColumns="False" IsReadOnly="True" Background="#FFEEF1F5">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding user_id}"/>
-                <DataGridTextColumn Header="Фамилия" Binding="{Binding first_name}"/>
-                <DataGridTextColumn Header="Имя" Binding="{Binding mid_name}"/>
-                <DataGridTextColumn Header="Отчество" Binding="{Binding last_name}"/>
+                <DataGridTextColumn Header="Фамилия" Binding="{Binding last_name}"/>
+                <DataGridTextColumn Header="Имя" Binding="{Binding first_name}"/>
+                <DataGridTextColumn Header="Отчество" Binding="{Binding mid_name}"/>
                 <DataGridTextColumn Header="Телефон" Binding="{Binding phone}"/>
                 <DataGridTextColumn Header="Логин" Binding="{Binding login}"/>
                 <DataGridTextColumn Header="Пароль" Binding="{Binding pass}"/>
