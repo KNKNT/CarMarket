@@ -1,4 +1,4 @@
-# CarMarket# CarMarket - WPF Car Dealership Application  
+# CarMarket - WPF Car Dealership Application  
 
 CarMarket is a desktop application for managing a car dealership, built with WPF and MySQL as the database. The application provides functionality for tracking inventory, managing sales, and handling customer interactions.  
 
