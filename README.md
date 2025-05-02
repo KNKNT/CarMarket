@@ -22,13 +22,13 @@ CarMarket is a desktop application for managing a car dealership, built with WPF
 - Windows 7/10/11
 
 ## Screenshots
-Main dashboard
+- Main dashboard
 ![image](https://github.com/user-attachments/assets/cdb2e753-92cc-4cd7-990d-beac4eb0e825)
 
-Profile page
+- Profile page
 ![image](https://github.com/user-attachments/assets/aa18472f-8f2a-41fb-b0ac-d82611dcf32f)
 
-Car page
+- Car page
 ![image](https://github.com/user-attachments/assets/45164593-f089-4089-af4e-e3791e5ab2b3)
 
 
